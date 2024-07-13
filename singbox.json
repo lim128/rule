@@ -1,37 +1,37 @@
-//DustinWin-Geodb全分组规则
-{
-  "outbounds": [
-    { "tag": "🚀 节点选择", "type": "selector", "outbounds": [ {providers_tags}, "🚀 手动切换", "🎯 本机直连" ] },
-    { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": [ {providers_tags}, "🚀 手动切换", "🎯 本机直连" ] },
-    { "tag": "🎯 全球直连", "type": "selector", "outbounds": [ "🎯 本机直连", "🚀 节点选择" ] },
-    { "tag": "📲 电报消息", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
-    { "tag": "🤖 人工智能", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
-    { "tag": "🎮 游戏平台", "type": "selector", "outbounds": [ "🎯 本机直连", "🚀 节点选择" ] },
-    { "tag": "Ⓜ️ 微软服务", "type": "selector", "outbounds": [ "🎯 本机直连", "🚀 节点选择" ] },
-    { "tag": "📢 谷歌服务", "type": "selector", "outbounds": [ "🎯 本机直连", "🚀 节点选择" ] },
-    { "tag": "🍎 苹果服务", "type": "selector", "outbounds": [ "🎯 本机直连", "🚀 节点选择" ] },
-    { "tag": "GLOBAL", "type": "selector", "outbounds": [ "🎯 本机直连", {providers_tags}, "🚀 手动切换" ] },
-    { "tag": "🚀 手动切换", "type": "selector", "use_all_providers": true },
-    { "tag": "🎯 本机直连", "type": "direct" },
-    { "tag": "dns-out", "type": "dns" }
-  ],
-  "route": {
-    "rules": [
-      { "protocol": "dns", "outbound": "dns-out" },
-      { "clash_mode": "Global", "outbound": "GLOBAL" },
-      { "clash_mode": "Direct", "outbound": "🎯 本机直连" },
-      { "geosite": "private", "outbound": "🎯 全球直连" },
-      { "geosite": "apple-cn", "outbound": "🍎 苹果服务" },
-      { "geosite": "google-cn", "outbound": "📢 谷歌服务" },
-      { "geosite": "microsoft-cn", "outbound": "Ⓜ️ 微软服务" },
-      { "geosite": "games-cn", "outbound": "🎮 游戏平台" },
-      { "geosite": "ai", "outbound": "🤖 人工智能" },
-      { "geosite": "proxy", "outbound": "🚀 节点选择" },
-      { "geosite": "cn", "outbound": "🎯 全球直连" },
-      { "geoip": "private", "outbound": "🎯 全球直连" }
-      { "geoip": "telegram", "outbound": "📲 电报消息" },
-      { "geoip": "cn", "outbound": "🎯 全球直连" }
-    ],
-    "final": "🐟 漏网之鱼"
-  }
-}
+[custom]
+;自用acl4SSR规则简版
+
+;规则
+ruleset=🍎 苹果服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+ruleset=Ⓜ️ 微软Bing,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
+ruleset=Ⓜ️ 微软服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+ruleset=🎮 游戏平台,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
+ruleset=📲 电报消息,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+ruleset=🎯 直连,[]GEOSITE,private
+ruleset=🎯 直连,[]GEOSITE,fakeip-filter
+ruleset=🎯 直连,[]GEOSITE,apple-cn
+ruleset=🎯 直连,[]GEOSITE,google-cn
+ruleset=🎯 直连,[]GEOSITE,microsoft-cn
+ruleset=🎯 直连,[]GEOSITE,games-cn
+ruleset=🚀 节点选择,[]GEOSITE,ai
+ruleset=🚀 节点选择,[]GEOSITE,proxy
+ruleset=🎯 直连,[]GEOSITE,cn
+ruleset=🎯 直连,[]GEOIP,private,no-resolve
+ruleset=🚀 节点选择,[]GEOIP,telegram,no-resolve
+ruleset=🎯 直连,[]GEOIP,cn,no-resolve
+ruleset=🐟 漏网之鱼,[]FINAL
+
+;分组
+custom_proxy_group=🚀 节点选择`select`[]♻️ 自动选择`[]🔯 故障转移`[]🎯 直连`.*
+custom_proxy_group=🔯 故障转移`fallback`.*`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=♻️ 自动选择`url-test`.*`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=🍎 苹果服务`select`[]🎯 直连`[]🚀 节点选择`[]♻️ 自动选择`.*
+custom_proxy_group=Ⓜ️ 微软Bing`select`[]🚀 节点选择`[]🎯 直连`[]♻️ 自动选择`.*
+custom_proxy_group=Ⓜ️ 微软服务`select`[]🎯 直连`[]🚀 节点选择`[]♻️ 自动选择`.*
+custom_proxy_group=🎮 游戏平台`select`[]🎯 直连`[]🚀 节点选择`[]♻️ 自动选择`.*
+custom_proxy_group=📲 电报消息`select`[]🚀 节点选择`[]🎯 直连`[]♻️ 自动选择`.*
+custom_proxy_group=🐟 漏网之鱼`select`[]🚀 节点选择`[]🎯 直连`[]♻️ 自动选择`.*
+custom_proxy_group=🎯 直连`select`[]DIRECT
+
+enable_rule_generator=true
+overwrite_original_rules=true
