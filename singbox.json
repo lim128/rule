@@ -1,0 +1,124 @@
+//DustinWin-ruleset全分组规则
+{
+  "outbounds": [
+    { "tag": "🚀 节点选择", "type": "selector", "outbounds": [ {providers_tags}, "🚀 手动切换", "🎯 直连" ] },
+    { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": [ {providers_tags}, "🚀 手动切换", "🎯 直连" ] },
+    { "tag": "🎯 全球直连", "type": "selector", "outbounds": [ "🎯 直连", "🚀 节点选择" ] },
+    { "tag": "📲 电报消息", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
+    { "tag": "🤖 人工智能", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
+    { "tag": "🎮 游戏平台", "type": "selector", "outbounds": [ "🎯 直连", "🚀 节点选择" ] },
+    { "tag": "Ⓜ️ 微软服务", "type": "selector", "outbounds": [ "🎯 直连", "🚀 节点选择" ] },
+    { "tag": "📢 谷歌服务", "type": "selector", "outbounds": [ "🎯 直连", "🚀 节点选择" ] },
+    { "tag": "🍎 苹果服务", "type": "selector", "outbounds": [ "🎯 直连", "🚀 节点选择" ] },
+    { "tag": "📈 网络测试", "type": "selector", "outbounds": [ "🎯 直连", "🚀 手动切换" ] },
+    { "tag": "GLOBAL", "type": "selector", "outbounds": [ "🎯 本机直连", {providers_tags}, "🚀 手动切换" ] },
+    { "tag": "🚀 手动切换", "type": "selector", "use_all_providers": true },
+    { "tag": "🎯 本机直连", "type": "direct" },
+    { "tag": "dns-out", "type": "dns" }
+  ],
+  "route": {
+    "rules": [
+      { "protocol":  "dns" , "outbound": "dns-out" },
+      { "clash_mode": "Global", "outbound": "GLOBAL" },
+      { "clash_mode": "Direct", "outbound": "🎯 本机直连" },
+      { "rule_set": "private", "outbound": "🎯 全球直连" },
+      { "rule_set": "ai", "outbound": "🤖 人工智能" },
+      { "rule_set": "microsoft-cn", "outbound": "Ⓜ️ 微软服务" },
+      { "rule_set": "apple-cn", "outbound": "🍎 苹果服务" },
+      { "rule_set": "google-cn", "outbound": "📢 谷歌服务" },
+      { "rule_set": "games-cn", "outbound": "🎮 游戏平台" },
+      { "rule_set": "networktest", "outbound": "📈 网络测试" },
+      { "rule_set": "proxy", "outbound": "🚀 节点选择" },
+      { "rule_set": "cn", "outbound": "🎯 全球直连" },
+      { "rule_set": "telegramip", "outbound": "📲 电报消息" },
+      { "rule_set": "cnip", "outbound": "🎯 全球直连" }
+    ],
+    "rule_set": [
+      {
+        "tag": "private",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/private.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/private.srs"
+      },
+      {
+        "tag": "microsoft-cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/microsoft-cn.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/microsoft-cn.srs"
+      },
+      {
+        "tag": "apple-cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/apple-cn.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/apple-cn.srs"
+      },
+      {
+        "tag": "google-cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/google-cn.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/google-cn.srs"
+      },
+      {
+        "tag": "games-cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/games-cn.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/games-cn.srs"
+      },
+      {
+        "tag": "ai",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/ai.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/ai.srs"
+      },
+      {
+        "tag": "networktest",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/networktest.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/networktest.srs"
+      },
+      {
+        "tag": "proxy",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/proxy.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/proxy.srs"
+      },
+      {
+        "tag": "cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/cn.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/cn.srs"
+      },
+      {
+        "tag": "telegramip",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/telegramip.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/telegramip.srs"
+      },
+      {
+        "tag": "privateip",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/privateip.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/privateip.srs"
+      },
+      {
+        "tag": "cnip",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/cnip.srs",
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/sing-box-ruleset/cnip.srs"
+      }
+    ],
+    "final": "🐟 漏网之鱼"
+  }
+}
