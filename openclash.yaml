@@ -42,7 +42,6 @@ rules:
   - RULE-SET,Apple,🎯 直连
   - RULE-SET,Global,🚀 节点选择
   - RULE-SET,ChinaMax,🎯 直连
-
   - GEOSITE,private,🎯 直连
   - GEOSITE,apple-cn,🎯 直连
   - GEOSITE,microsoft@cn,🎯 直连
