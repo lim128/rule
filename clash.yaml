@@ -73,7 +73,7 @@ rule-providers:
   Global:
     type: http
     behavior: classical
-    path: "./rule_provider/Apple.yaml"
+    path: "./rule_provider/Global.yaml"
     format: yaml
     url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global_Classical.yaml
     interval: 86400
@@ -81,7 +81,7 @@ rule-providers:
   ChinaMax:
     type: http
     behavior: classical
-    path: "./rule_provider/Apple.yaml"
+    path: "./rule_provider/ChinaMax.yaml"
     format: yaml
     url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
     interval: 86400
