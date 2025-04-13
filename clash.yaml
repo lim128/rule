@@ -29,7 +29,7 @@ proxy-groups:
   - {name: 🤖 负载均衡, type: load-balance, include-all: true, interval: 180}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 180, interval: 300}
   - {name: 🌐 手动切换, type: select, include-all: true}
-  - {name: 🍎 苹果服务, type: select, proxies: [🎯 直连, 🚀 节点选择]}
+#  - {name: 🍎 苹果服务, type: select, proxies: [🎯 直连, 🚀 节点选择]}
   - {name: 🎯 直连, type: select, proxies: [DIRECT]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 直连]}
 
@@ -40,7 +40,7 @@ proxy-groups:
 
 # 规则匹配
 rules:
-  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,Apple,🎯 直连
   - RULE-SET,Global,🚀 节点选择
   - RULE-SET,ChinaMax,🎯 直连
 
