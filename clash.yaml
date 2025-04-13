@@ -1,8 +1,8 @@
 # 机场订阅
 proxy-providers:
   Airport1:
-    url: "https://d7b12d59-21aa-9561-087f-89c834ac7fe8.372372.xyz/api/v1/client/subscribe?token=2128f0d058227879d782d641f9856bd6"
-    path: "./config/clash.yaml"
+    url: ""
+    path: "./proxy_provider/clash.yaml"
     type: http
     interval: 86400
     health-check:
