@@ -58,7 +58,7 @@ rules:
   - GEOIP,twitter,🚀 节点选择,no-resolve
   - GEOIP,apple,🎯 直连,no-resolve
   - GEOIP,cn,🎯 直连,no-resolve
-  - MATCH,🐟 漏网之鱼,[]FINAL
+  - MATCH,🐟 漏网之鱼
 
 # 规则集
 rule-providers:
