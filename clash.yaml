@@ -2,7 +2,6 @@
 proxy-providers:
   Airport1:
     url: ""
-    path: "./proxy_provider/tj.yaml"
     type: http
     interval: 86400
     health-check:
