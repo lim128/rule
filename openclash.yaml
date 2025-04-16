@@ -63,13 +63,15 @@ rule-providers:
     format: yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml
     interval: 86400
+    proxy: 🚀 节点选择
   Ai:
     type: http
     behavior: domain
-    path: "./rule_provider/Ai.mrs"
-    format: mrs
-    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.mrs
+    path: "./rule_provider/Ai.yaml"
+    format: yaml
+    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.yaml
     interval: 86400
+    proxy: 🚀 节点选择
   Microsoft:
     type: http
     behavior: classical
@@ -77,6 +79,7 @@ rule-providers:
     format: yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
+    proxy: 🚀 节点选择
   Global:
     type: http
     behavior: classical
@@ -84,6 +87,7 @@ rule-providers:
     format: yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
     interval: 86400
+    proxy: 🚀 节点选择
   ChinaMax:
     type: http
     behavior: classical
@@ -91,3 +95,4 @@ rule-providers:
     format: yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
     interval: 86400
+    proxy: 🚀 节点选择
