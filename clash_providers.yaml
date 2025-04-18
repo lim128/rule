@@ -37,8 +37,8 @@ rules:
   - RULE-SET,Apple,🎯 直连
   - RULE-SET,Ai,🚀 节点选择
   - RULE-SET,Microsoft,🎯 直连
-  - RULE-SET,Global,🚀 节点选择
-  - RULE-SET,ChinaMax,🎯 直连
+#  - RULE-SET,Global,🚀 节点选择
+#  - RULE-SET,ChinaMax,🎯 直连
   - GEOSITE,private,🎯 直连
   - GEOSITE,apple-cn,🎯 直连
   - GEOSITE,microsoft@cn,🎯 直连
@@ -80,19 +80,19 @@ rule-providers:
     url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
     proxy: 🎯 直连
-  Global:
-    type: http
-    behavior: classical
-    path: "./rule_provider/Global.yaml"
-    format: yaml
-    url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
-    interval: 86400
-    proxy: 🎯 直连
-  ChinaMax:
-    type: http
-    behavior: classical
-    path: "./rule_provider/ChinaMax.yaml"
-    format: yaml
-    url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
-    interval: 86400
-    proxy: 🎯 直连
+#  Global:
+#    type: http
+#    behavior: classical
+#    path: "./rule_provider/Global.yaml"
+#    format: yaml
+#    url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
+#    interval: 86400
+#    proxy: 🎯 直连
+#  ChinaMax:
+#    type: http
+#    behavior: classical
+#    path: "./rule_provider/ChinaMax.yaml"
+#    format: yaml
+#    url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
+#    interval: 86400
+#    proxy: 🎯 直连
