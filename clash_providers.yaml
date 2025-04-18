@@ -11,7 +11,7 @@ proxy-providers:
       interval: 300
     proxy: 🎯 直连
 # 节点信息
-proxies:
+#proxies:
 # 全局配置 
 port: 7890
 socks-port: 7891
