@@ -3,7 +3,7 @@ proxy-providers:
   Airport1:
     url: ""
     type: http
-    path: ./proxies/.yaml
+#    path: ./proxies/.yaml
     interval: 86400
     health-check:
       enable: true
