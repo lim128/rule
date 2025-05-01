@@ -45,14 +45,14 @@ rules:
   - GEOSITE,category-games@cn,🎯 直连
   - GEOSITE,geolocation-!cn,🚀 节点选择
   - GEOSITE,cn,🎯 直连
-  - GEOIP,private,🎯 直连,no-resolve
-  - GEOIP,cloudflare,🚀 节点选择,no-resolve
-  - GEOIP,cloudfront,🚀 节点选择,no-resolve
-  - GEOIP,google,🚀 节点选择,no-resolve
-  - GEOIP,telegram,🚀 节点选择,no-resolve
-  - GEOIP,twitter,🚀 节点选择,no-resolve
-  - GEOIP,apple,🎯 直连,no-resolve
-  - GEOIP,cn,🎯 直连,no-resolve
+  - GEOIP,private,🎯 直连
+  - GEOIP,cloudflare,🚀 节点选择
+  - GEOIP,cloudfront,🚀 节点选择
+  - GEOIP,google,🚀 节点选择
+  - GEOIP,telegram,🚀 节点选择
+  - GEOIP,twitter,🚀 节点选择
+  - GEOIP,apple,🎯 直连
+  - GEOIP,cn,🎯 直连
   - MATCH,🐟 漏网之鱼
 # 规则集
 rule-providers:
