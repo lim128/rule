@@ -19,20 +19,6 @@ allow-lan: true
 mode: Rule
 log-level: info
 external-controller: :9090
-# DNS配置
-dns:
-  enable: true
-  ipv6: true
-  listen: 0.0.0.0:7874
-  nameserver:
-  - 202.103.225.68
-  - 202.103.224.68
-  - "[240e:9:2000:100:202:103:225:68]:53"
-  - "[240e:9:0:100:202:103:224:68]:53"
-  proxy-server-nameserver:
-  - 119.29.29.29
-  default-nameserver:
-  - 119.29.29.29
 # 出站策略
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [🔯 故障转移, 🤖 负载均衡, 🌐 手动切换, 🎯 直连]}
@@ -110,3 +96,17 @@ rule-providers:
 #    url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
 #    interval: 86400
 #    proxy: 🎯 直连
+# DNS配置
+dns:
+  enable: true
+  ipv6: true
+  listen: 0.0.0.0:7874
+  nameserver:
+  - 202.103.225.68
+  - 202.103.224.68
+  - "[240e:9:2000:100:202:103:225:68]:53"
+  - "[240e:9:0:100:202:103:224:68]:53"
+  proxy-server-nameserver:
+  - 119.29.29.29
+  default-nameserver:
+  - 119.29.29.29
