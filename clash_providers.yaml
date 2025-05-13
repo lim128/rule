@@ -108,6 +108,7 @@ dns:
   - "[240e:9:0:100:202:103:224:68]:53"
   fallback:
   - tls://8.8.8.8:853
+  - tls://8.8.4.4:853
   proxy-server-nameserver:
   - 119.29.29.29
   default-nameserver:
