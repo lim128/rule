@@ -21,9 +21,9 @@ log-level: info
 external-controller: :9090
 # DNS配置
 dns:
-  enable: true
-  ipv6: true
-  listen: 0.0.0.0:7874
+#  enable: true
+#  ipv6: true
+#  listen: 0.0.0.0:7874
   nameserver:
   - 202.103.225.68
   - 202.103.224.68
