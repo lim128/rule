@@ -11,7 +11,8 @@ proxy-providers:
       interval: 300
     proxy: 🎯 直连
 # 节点信息
-#proxies:
+proxies:
+  - {name: 🎯 直连, type: DIRECT}
 # 全局配置 
 port: 7890
 socks-port: 7891
@@ -21,9 +22,9 @@ log-level: info
 external-controller: :9090
 # 出站策略
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [🔯 故障转移, ♻️ 自动选择, 🤖 负载均衡, 🌐 手动切换, 🎯 直连]}
+  - {name: 🚀 节点选择, type: select, proxies: [🔯 故障转移, ♻️ 自动选择, 🌐 手动切换, 🎯 直连]}
   - {name: 🔯 故障转移, type: fallback, interval: 180, tolerance: 300, proxies: [🇺🇸 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇭🇰 香港节点]}
-  - {name: 🤖 负载均衡, type: load-balance, include-all: true, interval: 180, tolerance: 300}
+#  - {name: 🤖 负载均衡, type: load-balance, include-all: true, interval: 180, tolerance: 300}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, interval: 180, tolerance: 300}
   - {name: 🌐 手动切换, type: select, include-all: true}
   - {name: 🎯 直连, type: select, proxies: [DIRECT], hidden: true}
