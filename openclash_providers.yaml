@@ -59,7 +59,7 @@ rule-providers:
   Apple:
     type: http
     behavior: classical
-    path: "./rule_provider/Apple.yaml"
+#    path: "./rule_provider/Apple.yaml"
     format: yaml
     url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml
     interval: 86400
@@ -67,7 +67,7 @@ rule-providers:
   Ai:
     type: http
     behavior: domain
-    path: "./rule_provider/Ai.yaml"
+#    path: "./rule_provider/Ai.yaml"
     format: yaml
     url: https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.yaml
     interval: 86400
@@ -75,7 +75,7 @@ rule-providers:
   Microsoft:
     type: http
     behavior: classical
-    path: "./rule_provider/Microsoft.yaml"
+#    path: "./rule_provider/Microsoft.yaml"
     format: yaml
     url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
@@ -83,7 +83,7 @@ rule-providers:
   Global:
     type: http
     behavior: classical
-    path: "./rule_provider/Global.yaml"
+#    path: "./rule_provider/Global.yaml"
     format: yaml
     url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
     interval: 86400
@@ -91,7 +91,7 @@ rule-providers:
   ChinaMax:
     type: http
     behavior: classical
-    path: "./rule_provider/ChinaMax.yaml"
+#    path: "./rule_provider/ChinaMax.yaml"
     format: yaml
     url: https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
     interval: 86400
