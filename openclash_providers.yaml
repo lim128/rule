@@ -103,10 +103,14 @@ dns:
     - 223.6.6.6
   proxy-server-nameserver:
     - tls://223.5.5.5:853
+    - tls://223.6.6.6:853
   nameserver-policy:
     geosite:private,cn:
     - tls://223.5.5.5:853
+    - tls://223.6.6.6:853
     rule-set:Apple,Microsoft,ChinaMax:
     - tls://223.5.5.5:853
+    - tls://223.6.6.6:853
   nameserver:
     - tls://8.8.8.8:853#🚀 节点选择
+    - tls://8.8.4.4:853#🚀 节点选择
