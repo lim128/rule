@@ -9,7 +9,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    proxy: 🎯 直连
+#    proxy: 🎯 直连
 # 节点信息
 #proxies:
 # 全局配置 
@@ -63,7 +63,6 @@ rule-providers:
     format: yaml
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple_Classical.yaml
     interval: 86400
-    proxy: 🎯 直连
   Ai:
     type: http
     behavior: domain
@@ -71,7 +70,6 @@ rule-providers:
     format: yaml
     url: https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.yaml
     interval: 86400
-    proxy: 🎯 直连
   Microsoft:
     type: http
     behavior: classical
@@ -79,7 +77,6 @@ rule-providers:
     format: yaml
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
-    proxy: 🎯 直连
   Global:
     type: http
     behavior: classical
@@ -87,7 +84,6 @@ rule-providers:
     format: yaml
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global_Classical.yaml
     interval: 86400
-    proxy: 🎯 直连
   ChinaMax:
     type: http
     behavior: classical
@@ -95,7 +91,6 @@ rule-providers:
     format: yaml
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
     interval: 86400
-    proxy: 🎯 直连
 # DNS配置
 dns:
   enable: true
@@ -109,3 +104,10 @@ dns:
     - 223.6.6.6
   proxy-server-nameserver:
     - tls://223.5.5.5:853
+  nameserver-policy:
+    geosite:private,cn:
+    - tls://223.5.5.5:853
+    rule-set:Apple,Microsoft,ChinaMax:
+    - tls://223.5.5.5:853
+  nameserver:
+    - tls://8.8.8.8:853#🚀 节点选择
