@@ -36,6 +36,8 @@ rules:
   - RULE-SET,Apple,🎯 直连
   - RULE-SET,Ai,🚀 节点选择
   - RULE-SET,Microsoft,🎯 直连
+  - RULE-SET,Epic,🎯 直连
+  - RULE-SET,Steam,🚀 节点选择
   - RULE-SET,Global,🚀 节点选择
   - RULE-SET,ChinaMax,🎯 直连
   - GEOSITE,private,🎯 直连
@@ -75,6 +77,20 @@ rule-providers:
     path: "./rule/Microsoft.yaml"
     format: yaml
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml
+    interval: 86400
+  Epic:
+    type: http
+    behavior: classical
+    path: "./rule/Epic.yaml"
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    path: "./rule/Steam.yaml"
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml
     interval: 86400
   Global:
     type: http
