@@ -33,51 +33,29 @@ proxy-groups:
   - {name: 🇭🇰 香港节点, type: fallback, include-all: true, interval: 180, filter: "(?i)港|HK|hk|Hong Kong|HongKong|hongkong"}
 # 规则匹配
 rules:
-  - RULE-SET,Apple,🎯 直连
-  - RULE-SET,Ai,🚀 节点选择
-  - RULE-SET,Microsoft,🎯 直连
   - RULE-SET,Epic,🎯 直连
-  - RULE-SET,Steam,🚀 节点选择
-#  - RULE-SET,Global,🚀 节点选择
-#  - RULE-SET,ChinaMax,🎯 直连
   - GEOSITE,private,🎯 直连
-#  - GEOSITE,apple-cn,🎯 直连
-#  - GEOSITE,microsoft@cn,🎯 直连
-#  - GEOSITE,category-games@cn,🎯 直连
-  - GEOSITE,geolocation-!cn,🚀 节点选择
+  - GEOSITE,ai,🚀 节点选择
+  - GEOSITE,apple-cn,🎯 直连
+  - GEOSITE,fakeip-filter,🎯 直连
+  - GEOSITE,google-cn,🎯 直连
+  - GEOSITE,microsoft-cn,🎯 直连
+  - GEOSITE,networktest,🎯 直连
+  - GEOSITE,trackerslist,🎯 直连
+  - GEOSITE,tld-proxy,🚀 节点选择
+  - GEOSITE,proxy,🚀 节点选择
   - GEOSITE,cn,🎯 直连
-  - GEOIP,private,🎯 直连
-  - GEOIP,cloudflare,🚀 节点选择
-#  - GEOIP,cloudfront,🚀 节点选择
-  - GEOIP,google,🚀 节点选择
-#  - GEOIP,telegram,🚀 节点选择
-#  - GEOIP,twitter,🚀 节点选择
-#  - GEOIP,apple,🎯 直连
-  - GEOIP,cn,🎯 直连
+  - GEOIP,private,🎯 直连,no-resolve
+  - GEOIP,cloudflare,🚀 节点选择,no-resolve
+  - GEOIP,cloudfront,🚀 节点选择,no-resolve
+  - GEOIP,google,🚀 节点选择,no-resolve
+  - GEOIP,telegram,🚀 节点选择,no-resolve
+  - GEOIP,twitter,🚀 节点选择,no-resolve
+  - GEOIP,apple,🎯 直连,no-resolve
+  - GEOIP,cn,🎯 直连,no-resolve
   - MATCH,🐟 漏网之鱼
 # 规则集
 rule-providers:
-  Apple:
-    type: http
-    behavior: classical
-    path: "./rule/Apple.yaml"
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple_Classical.yaml
-    interval: 86400
-  Ai:
-    type: http
-    behavior: domain
-    path: "./rule/Ai.yaml"
-    format: yaml
-    url: https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.yaml
-    interval: 86400
-  Microsoft:
-    type: http
-    behavior: classical
-    path: "./rule/Microsoft.yaml"
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml
-    interval: 86400
   Epic:
     type: http
     behavior: classical
@@ -85,27 +63,6 @@ rule-providers:
     format: yaml
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml
     interval: 86400
-  Steam:
-    type: http
-    behavior: classical
-    path: "./rule/Steam.yaml"
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml
-    interval: 86400
-#  Global:
-#    type: http
-#    behavior: classical
-#    path: "./rule/Global.yaml"
-#    format: yaml
-#    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global_Classical.yaml
-#    interval: 86400
-#  ChinaMax:
-#    type: http
-#    behavior: classical
-#    path: "./rule/ChinaMax.yaml"
-#    format: yaml
-#    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
-#    interval: 86400
 # DNS配置
 dns:
   enable: true
@@ -120,13 +77,18 @@ dns:
   proxy-server-nameserver:
     - tls://223.5.5.5:853
     - tls://223.6.6.6:853
-  nameserver-policy:
-    geosite:private,cn:
-    - tls://223.5.5.5:853
-    - tls://223.6.6.6:853
-    rule-set:Apple,Epic,Microsoft:
-    - tls://223.5.5.5:853
-    - tls://223.6.6.6:853
+#  nameserver-policy:
+#    geosite:private,apple-cn,fakeip-filter,google-cn,microsoft-cn,networktest,trackerslist,cn:
+#    - tls://223.5.5.5:853
+#    - tls://223.6.6.6:853
   nameserver:
     - tls://8.8.8.8:853#🚀 节点选择
     - tls://8.8.4.4:853#🚀 节点选择
+geodata-mode: true 
+geo-auto-update: true
+geo-update-interval: 24
+geox-url:
+  geoip: "https://ghfast.top/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo/geosite-all-lite.dat"
+  mmdb: "https://ghfast.top/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb"
+  asn: "https://ghfast.top/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
