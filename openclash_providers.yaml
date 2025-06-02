@@ -81,7 +81,7 @@ dns:
 #    "geosite:private,apple-cn,fakeip-filter,google-cn,microsoft-cn,networktest,trackerslist,cn":
 #    - tls://223.5.5.5:853
 #    - tls://223.6.6.6:853
-#    "rule-set:Epic":
+#    "rule-set:epic":
 #    - tls://223.5.5.5:853
 #    - tls://223.6.6.6:853
   nameserver:
