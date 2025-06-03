@@ -20,13 +20,13 @@ log-level: info
 external-controller: :9090
 # 出站策略
 proxy-groups:
-  - {name: 节点选择, type: select, proxies: [🔯 故障转移, ♻️ 自动选择, 🌐 手动切换, 🎯 直连], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/proxy.png"}
+  - {name: 节点选择, type: select, proxies: [故障转移, 自动选择, 手动切换, 直连], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/proxy.png"}
   - {name: 故障转移, type: fallback, interval: 180, tolerance: 300, proxies: [美国节点, 日本节点, 新加坡节点, 香港节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"}
 #  - {name: 负载均衡, type: load-balance, include-all: true, interval: 180, tolerance: 300, icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"}
   - {name: 自动选择, type: url-test, include-all: true, interval: 180, tolerance: 300, icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"}
   - {name: 手动切换, type: select, include-all: true, icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/global.png"}
   - {name: 直连, type: select, proxies: [DIRECT], hidden: true, icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/direct.png"}
-  - {name: 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 直连], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/match.png"}
+  - {name: 漏网之鱼, type: select, proxies: [节点选择, 直连], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/match.png"}
   - {name: 美国节点, type: fallback, include-all: true, interval: 180, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/unitedstates.png"}
   - {name: 日本节点, type: fallback, include-all: true, interval: 180, filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/japan.png"}
   - {name: 新加坡节点, type: fallback, include-all: true, interval: 180, filter: "(?i)新加坡|坡|狮城|SG|Singapore", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/singapore.png"}
