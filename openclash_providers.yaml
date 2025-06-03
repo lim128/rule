@@ -74,8 +74,7 @@ dns:
     - 223.5.5.5
     - 223.6.6.6
   proxy-server-nameserver:
-    - tls://223.5.5.5:853
-    - tls://223.6.6.6:853
+    - tls://dns.alidns.com
 # GEO数据
 geodata-mode: true 
 geo-auto-update: true
