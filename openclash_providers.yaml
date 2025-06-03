@@ -35,7 +35,7 @@ proxy-groups:
 # 规则匹配
 rules:
   - RULE-SET,epic,🎯 直连
-  - RULE-SET,ad,🎯 直连
+  - RULE-SET,ad,🚫 拦截
   - GEOSITE,private,🎯 直连
   - GEOSITE,ai,🚀 节点选择
   - GEOSITE,apple-cn,🎯 直连
