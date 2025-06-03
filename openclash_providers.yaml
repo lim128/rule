@@ -76,16 +76,6 @@ dns:
   proxy-server-nameserver:
     - tls://223.5.5.5:853
     - tls://223.6.6.6:853
-#  nameserver-policy:
-#    "geosite:private,apple-cn,fakeip-filter,google-cn,microsoft-cn,networktest,trackerslist,cn":
-#    - tls://223.5.5.5:853
-#    - tls://223.6.6.6:853
-#    "rule-set:epic":
-#    - tls://223.5.5.5:853
-#    - tls://223.6.6.6:853
-  nameserver:
-    - tls://8.8.8.8:853#🚀 节点选择
-    - tls://8.8.4.4:853#🚀 节点选择
 # GEO数据
 geodata-mode: true 
 geo-auto-update: true
