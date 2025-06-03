@@ -26,7 +26,6 @@ proxy-groups:
   - {name: ♻️ 自动选择, type: url-test, include-all: true, interval: 180, tolerance: 300}
   - {name: 🌐 手动切换, type: select, include-all: true}
   - {name: 🎯 直连, type: select, proxies: [DIRECT], hidden: true}
-  - {name: 🚫 拦截, type: select, proxies: [REJECT], hidden: true}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 直连]}
   - {name: 美国节点, type: fallback, include-all: true, interval: 180, filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/unitedstates.png"}
   - {name: 日本节点, type: fallback, include-all: true, interval: 180, filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/japan.png"}
@@ -35,7 +34,6 @@ proxy-groups:
 # 规则匹配
 rules:
   - RULE-SET,epic,🎯 直连
-  - RULE-SET,ad,🚫 拦截
   - GEOSITE,private,🎯 直连
   - GEOSITE,ai,🚀 节点选择
   - GEOSITE,apple-cn,🎯 直连
@@ -64,13 +62,6 @@ rule-providers:
     path: "./rule/epic.yaml"
     format: yaml
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml
-    interval: 86400
-  ad:
-    type: http
-    behavior: domain
-    path: "./rule/ad.mrs"
-    format: mrs
-    url: https://ghfast.top/https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules-mihomo.mrs
     interval: 86400
 # DNS配置
 dns:
