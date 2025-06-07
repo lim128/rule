@@ -67,6 +67,7 @@ rule-providers:
 dns:
   enable: true
   ipv6: true
+  prefer-h3: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   listen: 0.0.0.0:7874
@@ -74,7 +75,7 @@ dns:
     - 223.5.5.5
     - 223.6.6.6
   proxy-server-nameserver:
-    - tls://dns.alidns.com
+    - https://dns.alidns.com/dns-query
 # GEO数据
 geodata-mode: true 
 geo-auto-update: true
