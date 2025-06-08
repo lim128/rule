@@ -65,6 +65,7 @@ rule-providers:
     format: yaml
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml
     interval: 86400
+    proxy: 直连
 # DNS配置
 dns:
   enable: true
@@ -78,12 +79,3 @@ dns:
     - 223.6.6.6
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
-# GEO数据
-geodata-mode: true 
-geo-auto-update: true
-geo-update-interval: 24
-geox-url:
-  geoip: "https://ghfast.top/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
-  geosite: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo/geosite-all-lite.dat"
-  mmdb: "https://ghfast.top/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb"
-  asn: "https://ghfast.top/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
