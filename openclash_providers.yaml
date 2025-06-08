@@ -22,7 +22,7 @@ log-level: info
 external-controller: :9090
 # 出站策略
 proxy-groups:
-  - {name: 节点选择, type: select, proxies: [故障转移, 手动切换, 直连], icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/hot.png"}
+  - {name: 节点选择, type: select, proxies: [故障转移, 手动切换, 直连, 美国节点, 日本节点, 新加坡节点, 香港节点, 其他节点], icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/hot.png"}
   - {name: 故障转移, type: fallback, interval: 180, tolerance: 300, proxies: [美国节点, 日本节点, 新加坡节点, 香港节点, 其他节点], icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"}
 #  - {name: 负载均衡, type: load-balance, include-all: true, interval: 180, tolerance: 300, filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"}
 #  - {name: 自动选择, type: url-test, include-all: true, interval: 180, tolerance: 300, filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"}
