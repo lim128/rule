@@ -9,7 +9,6 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    proxy: 直连
 # 节点信息
 #proxies:
 #  - {name: 直连, type: direct}
@@ -66,7 +65,6 @@ rule-providers:
     format: yaml
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml
     interval: 86400
-    proxy: 直连
 # DNS配置
 dns:
   enable: true
