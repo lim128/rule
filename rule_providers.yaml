@@ -36,7 +36,7 @@ proxy-groups:
 # 规则匹配
 rules:
   - RULE-SET,private,直连
-  - RULE-SET,privateip,直连
+  - RULE-SET,privateip,直连,no-resolve
   - RULE-SET,ai,节点选择
   - RULE-SET,apple-cn,直连
   - RULE-SET,epic,直连
