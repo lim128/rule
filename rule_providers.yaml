@@ -85,7 +85,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    path: "./rule/epic.yaml"
+    path: "./rules/epic.yaml"
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml
     interval: 86400
   fakeip-filter:
