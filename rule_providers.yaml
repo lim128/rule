@@ -129,7 +129,7 @@ rule-providers:
     behavior: classical
     format: yaml
     path: ./rules/telegram.yaml
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram_No_Resolve.yaml"
     interval: 86400
   tld-proxy:
     type: http
