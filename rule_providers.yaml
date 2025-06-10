@@ -1,0 +1,166 @@
+# 机场订阅
+proxy-providers:
+  Airport1:
+    url: ""
+    type: http
+    path: ./proxies/.yaml
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+# 节点信息
+#proxies:
+#  - {name: 直连, type: direct}
+# 全局配置 
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+# 出站策略
+proxy-groups:
+  - {name: 节点选择, type: select, proxies: [故障转移, 手动切换, 直连, 美国节点, 日本节点, 新加坡节点, 香港节点, 其他节点], icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/global.png"}
+  - {name: 故障转移, type: fallback, interval: 180, tolerance: 300, proxies: [美国节点, 日本节点, 新加坡节点, 香港节点, 其他节点], icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"}
+#  - {name: 负载均衡, type: load-balance, include-all: true, interval: 180, tolerance: 300, filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"}
+#  - {name: 自动选择, type: url-test, include-all: true, interval: 180, tolerance: 300, filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"}
+  - {name: 手动切换, type: select, include-all: true, filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/proxy.png"}
+  - {name: 美国节点, type: fallback, include-all: true, interval: 180, tolerance: 300, filter: "(?i).*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/unitedstates.png"}
+  - {name: 日本节点, type: fallback, include-all: true, interval: 180, tolerance: 300, filter: "(?i).*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/japan.png"}
+  - {name: 新加坡节点, type: fallback, include-all: true, interval: 180, tolerance: 300, filter: "(?i).*(新加坡|坡|狮城|SG|Singapore).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/singapore.png"}
+  - {name: 香港节点, type: fallback, include-all: true, interval: 180, tolerance: 300, filter: "(?i).*(港|HK|hk|Hong Kong|HongKong|hongkong).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/hongkong.png"}
+  - {name: 其他节点, type: url-test, include-all: true, interval: 180, tolerance: 300, filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|新加坡|坡|狮城|SG|Singapore|港|HK|hk|Hong Kong|HongKong|hongkong)).*$", icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/ss.png"}
+  - {name: 直连, type: select, proxies: [DIRECT], hidden: true, icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/direct.png"}
+  - {name: 漏网之鱼, type: select, proxies: [节点选择, 直连], icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/match.png"}
+# 规则匹配
+rules:
+  - RULE-SET,private,直连
+  - RULE-SET,privateip,直连
+  - RULE-SET,ai,节点选择
+  - RULE-SET,apple-cn,直连
+  - RULE-SET,epic,直连
+  - RULE-SET,fakeip-filter,直连
+  - RULE-SET,google-cn,直连
+  - RULE-SET,microsoft-cn,直连
+  - RULE-SET,networktest,直连
+  - RULE-SET,trackerslist,直连
+  - RULE-SET,tld-proxy,节点选择
+  - RULE-SET,proxy,节点选择
+  - RULE-SET,cn,直连
+  - RULE-SET,cnip,直连
+  - GEOIP,cn,直连
+  - MATCH,漏网之鱼
+# 规则集
+rule-providers:
+  private:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/private.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.mrs"
+    interval: 86400
+  privateip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    path: ./rules/privateip.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/privateip.mrs"
+    interval: 86400
+  ai:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/ai.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.mrs"
+    interval: 86400
+  apple-cn:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/apple-cn.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/apple-cn.mrs"
+    interval: 86400
+  epic:
+    type: http
+    behavior: classical
+    format: yaml
+    path: "./rule/epic.yaml"
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml
+    interval: 86400
+  fakeip-filter:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/fakeip-filter.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"
+    interval: 86400
+  google-cn:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/google-cn.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/google-cn.mrs"
+    interval: 86400
+  microsoft-cn:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/microsoft-cn.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/microsoft-cn.mrs"
+    interval: 86400
+  networktest:
+    type: http
+    behavior: classical
+    format: text
+    path: ./rules/networktest.list
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/networktest.list"
+    interval: 86400
+  trackerslist:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/trackerslist.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/trackerslist.mrs"
+    interval: 86400
+  tld-proxy:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/tld-proxy.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/tld-proxy.mrs"
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/proxy.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/proxy.mrs"
+    interval: 86400
+  cn:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/cn.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cn.mrs"
+    interval: 86400
+  cnip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    path: ./rules/cnip.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cnip.mrs"
+    interval: 86400
+# DNS配置
+dns:
+  enable: true
+  ipv6: true
+  prefer-h3: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  listen: 0.0.0.0:7874
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
