@@ -36,7 +36,6 @@ proxy-groups:
 # 规则匹配
 rules:
   - RULE-SET,private,直连
-  - RULE-SET,privateip,直连,no-resolve
   - RULE-SET,ai,节点选择
   - RULE-SET,apple-cn,直连
   - RULE-SET,epic,直连
@@ -50,6 +49,7 @@ rules:
   - RULE-SET,proxy,节点选择
   - RULE-SET,cn,直连
   - RULE-SET,cnip,直连
+  - GEOIP,private,直连,no-resolve
   - GEOIP,cn,直连
   - MATCH,漏网之鱼
 # 规则集
@@ -60,13 +60,6 @@ rule-providers:
     format: mrs
     path: ./rules/private.mrs
     url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.mrs"
-    interval: 86400
-  privateip:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    path: ./rules/privateip.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/privateip.mrs"
     interval: 86400
   ai:
     type: http
