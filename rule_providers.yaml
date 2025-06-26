@@ -63,6 +63,13 @@ rule-providers:
     path: ./rules/private.mrs
     url: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.mrs"
     interval: 86400
+  adblock:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/adblock_reject.mrs
+    url: "https://ghfast.top/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.mrs"
+    interval: 86400
   ai:
     type: http
     behavior: domain
@@ -153,13 +160,6 @@ rule-providers:
     format: mrs
     path: ./rules/cnip.mrs
     url: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cnip.mrs"
-    interval: 86400
-  adblock:
-    type: http
-    behavior: domain
-    format: mrs
-    path: ./rules/adblock_reject.mrs
-    url: "https://ghfast.top/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.mrs"
     interval: 86400
 # DNS配置
 dns:
