@@ -32,10 +32,12 @@ proxy-groups:
   - {name: 香港节点, type: fallback, include-all: true, interval: 180, tolerance: 300, filter: "(?i).*(港|HK|hk|Hong Kong|HongKong|hongkong).*$", icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/hongkong.png"}
   - {name: 其他节点, type: url-test, include-all: true, interval: 180, tolerance: 300, filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|新加坡|坡|狮城|SG|Singapore|港|HK|hk|Hong Kong|HongKong|hongkong)).*$", icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/ss.png"}
   - {name: 直连, type: select, proxies: [DIRECT], hidden: true, icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/direct.png"}
+  - {name: 拒绝, type: select, proxies: [REJECT], hidden: true, icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/reject.png"}
   - {name: 漏网之鱼, type: select, proxies: [节点选择, 直连], icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/match.png"}
 # 规则匹配
 rules:
   - RULE-SET,private,直连
+  - RULE-SET,adblock,拒绝
   - RULE-SET,ai,节点选择
   - RULE-SET,apple-cn,直连
   - RULE-SET,epic,直连
@@ -151,6 +153,13 @@ rule-providers:
     format: mrs
     path: ./rules/cnip.mrs
     url: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cnip.mrs"
+    interval: 86400
+  adblock:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/adblock_reject.mrs
+    url: "https://ghfast.top/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.mrs"
     interval: 86400
 # DNS配置
 dns:
