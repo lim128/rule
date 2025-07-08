@@ -37,7 +37,6 @@ proxy-groups:
 # 规则匹配
 rules:
   - RULE-SET,private,直连
-  - RULE-SET,adblock,拒绝
   - RULE-SET,ai,节点选择
   - RULE-SET,apple-cn,直连
   - RULE-SET,epic,直连
@@ -62,13 +61,6 @@ rule-providers:
     format: mrs
     path: ./rules/private.mrs
     url: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.mrs"
-    interval: 86400
-  adblock:
-    type: http
-    behavior: domain
-    format: mrs
-    path: ./rules/adblock_reject.mrs
-    url: "https://ghfast.top/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.mrs"
     interval: 86400
   ai:
     type: http
