@@ -9,9 +9,6 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-# 节点信息
-#proxies:
-#  - {name: 直连, type: direct}
 # 全局配置 
 port: 7890
 socks-port: 7891
@@ -153,7 +150,3 @@ rule-providers:
     path: ./rules/cnip.mrs
     url: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cnip.mrs"
     interval: 86400
-# DNS配置
-dns:
-  enable: true
-  ipv6: true
