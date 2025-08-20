@@ -35,7 +35,6 @@ proxy-groups:
   - name: 故障转移
     type: fallback
     interval: 180
-    tolerance: 300
     proxies:
     - 美国节点
     - 日本节点
