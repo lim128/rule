@@ -128,22 +128,22 @@ proxy-groups:
   icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/match.png"
 # 规则匹配
 rules:
-  - RULE-SET,private,直连
-  - RULE-SET,ai,节点选择
-  - RULE-SET,apple-cn,直连
-  - RULE-SET,fakeip-filter,直连
-  - RULE-SET,google-cn,直连
-  - RULE-SET,microsoft-cn,直连
-  - RULE-SET,networktest,直连
-  - RULE-SET,trackerslist,直连
-  - RULE-SET,telegram,节点选择
-  - RULE-SET,tld-proxy,节点选择
-  - RULE-SET,proxy,节点选择
-  - RULE-SET,cn,直连
-  - RULE-SET,cnip,直连
-  - GEOIP,private,直连,no-resolve
-  - GEOIP,cn,直连
-  - MATCH,漏网之鱼
+- RULE-SET,private,直连
+- RULE-SET,ai,节点选择
+- RULE-SET,apple-cn,直连
+- RULE-SET,fakeip-filter,直连
+- RULE-SET,google-cn,直连
+- RULE-SET,microsoft-cn,直连
+- RULE-SET,networktest,直连
+- RULE-SET,trackerslist,直连
+- RULE-SET,telegram,节点选择
+- RULE-SET,tld-proxy,节点选择
+- RULE-SET,proxy,节点选择
+- RULE-SET,cn,直连
+- RULE-SET,cnip,直连
+- GEOIP,private,直连,no-resolve
+- GEOIP,cn,直连
+- MATCH,漏网之鱼
 # 规则集
 rule-providers:
   private:
