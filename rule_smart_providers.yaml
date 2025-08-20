@@ -46,7 +46,6 @@ proxy-groups:
   type: load-balance
   include-all: true
   interval: 180
-  tolerance: 300
   filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$"
   icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/networktest.png"
 - name: 自动选择
