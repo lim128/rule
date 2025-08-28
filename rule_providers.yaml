@@ -143,12 +143,12 @@ rule-providers:
     path: ./rules/ai.mrs
     url: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.mrs"
     interval: 86400
-  apple-cn:
+  apple:
     type: http
-    behavior: domain
-    format: mrs
-    path: ./rules/apple-cn.mrs
-    url: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/apple-cn.mrs"
+    behavior: classical
+    format: yaml
+    path: ./rules/apple.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple_Classical.yaml"
     interval: 86400
   fakeip-filter:
     type: http
