@@ -113,7 +113,7 @@ proxy-groups:
 rules:
 - RULE-SET,private,直连
 - RULE-SET,ai,节点选择
-- RULE-SET,apple-cn,直连
+- RULE-SET,apple,直连
 - RULE-SET,fakeip-filter,直连
 - RULE-SET,google-cn,直连
 - RULE-SET,microsoft-cn,直连
