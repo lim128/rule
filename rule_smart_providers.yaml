@@ -47,7 +47,7 @@ proxy-groups:
   include-all: true
   interval: 180
   filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$"
-  icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icons/networktest.png"
+  icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/speedtest.png"
 - name: 自动选择
   type: smart
   include-all: true
