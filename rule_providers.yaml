@@ -123,7 +123,7 @@ rules:
 - GEOSITE,tld-proxy,节点选择
 - GEOSITE,proxy,节点选择
 - GEOSITE,cn,直连
-- RULE-SET,cnip,直连
+- RULE-SET,cnip,直连,no-resolve
 - GEOIP,private,直连,no-resolve
 - GEOIP,cn,直连
 - MATCH,漏网之鱼
