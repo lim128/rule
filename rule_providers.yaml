@@ -115,7 +115,7 @@ rules:
 - GEOSITE,ai,节点选择
 - RULE-SET,apple,直连
 - GEOSITE,fakeip-filter-lite,直连
-- GEOSITE,google-cn,直连
+#- GEOSITE,google-cn,直连
 - GEOSITE,microsoft-cn,直连
 - GEOSITE,networktest,直连
 - GEOSITE,trackerslist,直连
