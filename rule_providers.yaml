@@ -22,9 +22,9 @@ proxy-groups:
   type: select
   proxies:
   - 故障转移
-  - 负载均衡
   - 自动选择
   - 手动切换
+  - 人工智能
   - 美国节点
   - 日本节点
   - 新加坡节点
@@ -42,24 +42,23 @@ proxy-groups:
   - 香港节点
   - 其他节点
   icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/qure/color/Drill.png"
-- name: 负载均衡
-  type: load-balance
-  include-all: true
-  interval: 180
-  filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$"
-  icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/speedtest.png"
 - name: 自动选择
   type: url-test
   include-all: true
   interval: 180
   tolerance: 300
   filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$"
-  icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"
+  icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/speedtest.png"
 - name: 手动切换
   type: select
   include-all: true
   filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$"
   icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/proxy.png"
+- name: 人工智能
+  type: select
+  proxies:
+  - 美国节点
+  icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"
 - name: 美国节点
   type: fallback
   include-all: true
@@ -112,10 +111,9 @@ proxy-groups:
 # 规则匹配
 rules:
 - GEOSITE,private,直连
-- GEOSITE,ai,节点选择
+- GEOSITE,ai,人工智能
 - RULE-SET,apple,直连
 - GEOSITE,fakeip-filter-lite,直连
-#- GEOSITE,google-cn,直连
 - GEOSITE,microsoft-cn,直连
 - GEOSITE,networktest,直连
 - GEOSITE,trackerslist,直连
