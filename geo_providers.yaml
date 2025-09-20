@@ -36,7 +36,6 @@ proxy-groups:
   - 故障转移
   - 自动选择
   - 手动切换
-  - 人工智能
   - 美国节点
   - 日本节点
   - 新加坡节点
@@ -68,8 +67,8 @@ proxy-groups:
   icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/proxy.png"
 - name: 人工智能
   type: select
-  proxies:
-  - 美国节点
+  include-all: true
+  filter: "(?i).*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States).*$"
   icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"
 - name: 美国节点
   type: fallback
