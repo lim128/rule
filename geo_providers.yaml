@@ -36,7 +36,7 @@ proxy-groups:
   - 故障转移
   - 自动选择
   - 手动切换
-#  - 高级节点
+  - 高级节点
   - 美国节点
   - 日本节点
   - 新加坡节点
@@ -71,11 +71,11 @@ proxy-groups:
   include-all: true
   filter: "(?i).*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States).*$"
   icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"
-#- name: 高级节点
-#  type: select
-#  include-all: true
-#  filter: "(?i).*(专线|专用|高级|直连|急速|高倍率|游戏|game|IEPL|IPLC|AIA|CTM|CC|AC|x[2-9]|x[1-9][0-9]+).*$"
-#  icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/hot.png"
+- name: 高级节点
+  type: select
+  include-all: true
+  filter: "(?i).*(专线|专用|高级|直连|急速|高倍率|游戏|game|IEPL|IPLC|AIA|CTM|CC|AC|x[2-9]|x[1-9][0-9]+).*$"
+  icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/hot.png"
 - name: 美国节点
   type: fallback
   include-all: true
