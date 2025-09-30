@@ -70,7 +70,7 @@ proxy-groups:
   type: select
   include-all: true
   filter: "(?i).*(专线|专用|高级|直连|急速|高倍率|游戏|game|IEPL|IPLC|AIA|CTM|CC|AC|x[2-9]|x[1-9][0-9]+).*$"
-  icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/hot.png"
+  icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/qure/color/Ring.png"
 - name: 人工智能
   type: select
   include-all: true
