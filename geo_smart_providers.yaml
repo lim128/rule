@@ -7,7 +7,7 @@ proxy-providers:
     interval: 86400
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: "https://cp.cloudflare.com/generate_204"
       interval: 300
 # 全局配置 
 port: 7890
@@ -33,7 +33,7 @@ proxy-groups:
 - name: 节点选择
   type: select
   proxies:
-#  - 故障转移
+  - 故障转移
   - 自动选择
   - 手动切换
   - 高级节点
@@ -46,6 +46,7 @@ proxy-groups:
   icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/global.png"
 - name: 故障转移
   type: fallback
+  url: "https://cp.cloudflare.com/generate_204"
   interval: 180
   proxies:
   - 美国节点
@@ -57,6 +58,7 @@ proxy-groups:
 - name: 自动选择
   type: smart
   include-all: true
+  url: "https://cp.cloudflare.com/generate_204"
   interval: 180
   uselightgbm: true
   collectdata: false
@@ -76,12 +78,14 @@ proxy-groups:
 - name: 人工智能
   type: fallback
   include-all: true
+  url: "https://cp.cloudflare.com/generate_204"
   interval: 180
   filter: "(?i).*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States).*$"
   icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png"
 - name: 美国节点
   type: smart
   include-all: true
+  url: "https://cp.cloudflare.com/generate_204"
   interval: 180
   uselightgbm: true
   collectdata: false
@@ -91,6 +95,7 @@ proxy-groups:
 - name: 日本节点
   type: smart
   include-all: true
+  url: "https://cp.cloudflare.com/generate_204"
   interval: 180
   uselightgbm: true
   collectdata: false
@@ -100,6 +105,7 @@ proxy-groups:
 - name: 新加坡节点
   type: smart
   include-all: true
+  url: "https://cp.cloudflare.com/generate_204"
   interval: 180
   uselightgbm: true
   collectdata: false
@@ -109,6 +115,7 @@ proxy-groups:
 - name: 香港节点
   type: smart
   include-all: true
+  url: "https://cp.cloudflare.com/generate_204"
   interval: 180
   uselightgbm: true
   collectdata: false
@@ -118,6 +125,7 @@ proxy-groups:
 - name: 其他节点
   type: smart
   include-all: true
+  url: "https://cp.cloudflare.com/generate_204"
   interval: 180
   uselightgbm: true
   collectdata: false
