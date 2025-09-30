@@ -189,4 +189,3 @@ dns:
   - 223.5.5.5
   fake-ip-filter:
   - geosite:fakeip-filter
-  - "+.vion.top"
