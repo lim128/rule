@@ -1,4 +1,4 @@
- 机场订阅
+# 机场订阅
 proxy-providers:
   Airport1:
     url: ""
