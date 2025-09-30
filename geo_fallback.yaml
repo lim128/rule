@@ -33,6 +33,7 @@ proxy-groups:
 - name: 节点选择
   type: select
   proxies:
+  - 故障转移
   - 自动选择
   - 手动选择
   - 高级节点
@@ -43,6 +44,16 @@ proxy-groups:
   - 其他节点
   - 直连
   icon: "https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/icons/global.png"
+- name: 故障转移
+  type: fallback
+  interval: 180
+  proxies:
+  - 美国节点
+  - 日本节点
+  - 新加坡节点
+  - 香港节点
+  - 其他节点
+  icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/qure/color/Drill.png"
 - name: 自动选择
   type: url-test
   include-all: true
