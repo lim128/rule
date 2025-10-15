@@ -49,7 +49,7 @@ proxy-groups:
   url: "https://www.gstatic.com/generate_204"
   interval: 180
   tolerance: 300
-  filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining)).*$"
+  filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining|专线|专用|高级|直连|急速|高倍率|游戏|game|IEPL|IPLC|AIA|CTM|CC|AC|x[2-9]|x[1-9][0-9]+)).*$"
   icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/speedtest.png"
 - name: 手动切换
   type: select
