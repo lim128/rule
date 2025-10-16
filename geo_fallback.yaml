@@ -114,7 +114,7 @@ proxy-groups:
   url: "https://www.gstatic.com/generate_204"
   interval: 180
   tolerance: 300
-  filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|新加坡|坡|狮城|SG|Singapore|港|HK|hk|Hong Kong|HongKong|hongkong)).*$"
+  filter: "^(?i)(?!.*(重置|到期|过期|剩余|套餐|返利|官网|群组|Expiration|Remaining|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|新加坡|坡|狮城|SG|Singapore|港|HK|hk|Hong Kong|HongKong|hongkong|专线|专用|高级|直连|急速|高倍率|游戏|game|IEPL|IPLC|AIA|CTM|CC|AC|x[2-9]|x[1-9][0-9]+)).*$"
   icon: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/icon/color/ss.png"
 - name: 直连
   type: select
